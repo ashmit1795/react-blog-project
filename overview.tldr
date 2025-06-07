@@ -36,13 +36,13 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 553.032916750019,
-			"y": -51.05297644628638,
-			"lastActivityTimestamp": 1749124906457,
+			"x": 363.1974835270505,
+			"y": -140.13373520122107,
+			"lastActivityTimestamp": 1749291631186,
 			"meta": {}
 		},
 		{
-			"x": 409.71770616486884,
+			"x": 717.0984465882939,
 			"y": 390,
 			"rotation": 0,
 			"isLocked": false,
@@ -81,15 +81,66 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -9.981066571830183,
-			"y": 119.92233568731064,
-			"z": 0.5904900000000001,
+			"x": 723.3276336000126,
+			"y": 680,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:URYm3YG2Mz1dVq-VL3U1E",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "l",
+				"w": 941.71875,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Part 2: Build authentication service with AppWrite"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": " "
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "a57w2",
+			"typeName": "shape"
+		},
+		{
+			"x": 239.82493862923909,
+			"y": 236.26774929310986,
+			"z": 0.533976827675149,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
 		},
 		{
-			"x": 628.6604246707283,
+			"x": 936.0411650941533,
 			"y": -52.19144439435627,
 			"rotation": 0,
 			"isLocked": false,
@@ -143,12 +194,14 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:AWJtjB6YcaWFA4J7_BbbK",
-				"shape:0K5U0Cvv-jp4UJzKYr5OW",
 				"shape:iubccKGfi84vOJlyhZEXn",
-				"shape:B2a5xU3thQYRo5p5LW73K"
+				"shape:B2a5xU3thQYRo5p5LW73K",
+				"shape:URYm3YG2Mz1dVq-VL3U1E",
+				"shape:T_TDnm5Fag73Vn1YGeIDu",
+				"shape:0K5U0Cvv-jp4UJzKYr5OW",
+				"shape:AWJtjB6YcaWFA4J7_BbbK"
 			],
-			"hoveredShapeId": "shape:AWJtjB6YcaWFA4J7_BbbK",
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -158,7 +211,7 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": 317.6343931765876,
+			"x": 625.0151336000126,
 			"y": 127.29881464535637,
 			"rotation": 0,
 			"isLocked": false,
@@ -269,6 +322,108 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 393.8171965882939,
+			"y": 760,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:T_TDnm5Fag73Vn1YGeIDu",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 1600.7396240234375,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "bulletList",
+							"content": [
+								{
+									"type": "listItem",
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "First of all you should always refer to the documnetation(of the backend service that you are using, in this case app write)"
+												}
+											]
+										},
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": " to create any authentication service(account creation, login feature, logout/delete session, get acc. details)."
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "So, basically we have created a class to define all the properties and methods of the services, so, that whenever we want "
+												}
+											]
+										},
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "to migrate from one backend service to another backend service, we will not need to have a major change in code and the "
+												}
+											]
+										},
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "code doesn't get exposed. This is a production grade style of code."
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "a60cQ",
+			"typeName": "shape"
+		},
+		{
 			"meta": {},
 			"id": "page:page",
 			"name": "Page 1",
@@ -285,9 +440,7 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {
-				"tldraw:size": "m"
-			},
+			"stylesForNextShape": {},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
@@ -302,7 +455,7 @@
 				"x": 0,
 				"y": 0,
 				"w": 1028,
-				"h": 481.3333435058594
+				"h": 558
 			},
 			"insets": [
 				false,
@@ -330,7 +483,7 @@
 			"typeName": "instance"
 		},
 		{
-			"x": 450.73333116486884,
+			"x": 758.1140715882939,
 			"y": 491.0278955781409,
 			"rotation": 0,
 			"isLocked": false,
