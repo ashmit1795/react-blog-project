@@ -36,13 +36,13 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 667.2318244170095,
-			"y": 416.9538319696286,
-			"lastActivityTimestamp": 1749122745013,
+			"x": 553.032916750019,
+			"y": -51.05297644628638,
+			"lastActivityTimestamp": 1749124906457,
 			"meta": {}
 		},
 		{
-			"x": 280,
+			"x": 409.71770616486884,
 			"y": 390,
 			"rotation": 0,
 			"isLocked": false,
@@ -81,15 +81,15 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -132.2524005486969,
-			"y": -184.67215363511644,
-			"z": 0.7290000000000001,
+			"x": -9.981066571830183,
+			"y": 119.92233568731064,
+			"z": 0.5904900000000001,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
 		},
 		{
-			"x": 489.99093121396504,
+			"x": 628.6604246707283,
 			"y": -52.19144439435627,
 			"rotation": 0,
 			"isLocked": false,
@@ -143,9 +143,12 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:iubccKGfi84vOJlyhZEXn"
+				"shape:AWJtjB6YcaWFA4J7_BbbK",
+				"shape:0K5U0Cvv-jp4UJzKYr5OW",
+				"shape:iubccKGfi84vOJlyhZEXn",
+				"shape:B2a5xU3thQYRo5p5LW73K"
 			],
-			"hoveredShapeId": null,
+			"hoveredShapeId": "shape:AWJtjB6YcaWFA4J7_BbbK",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -155,7 +158,7 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": 328.41152263374494,
+			"x": 317.6343931765876,
 			"y": 127.29881464535637,
 			"rotation": 0,
 			"isLocked": false,
@@ -288,7 +291,7 @@
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "move",
+				"type": "default",
 				"rotation": 0
 			},
 			"isFocusMode": false,
@@ -299,7 +302,7 @@
 				"x": 0,
 				"y": 0,
 				"w": 1028,
-				"h": 336
+				"h": 481.3333435058594
 			},
 			"insets": [
 				false,
@@ -316,7 +319,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 1.5,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": true,
+			"isHoveringCanvas": false,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
@@ -325,6 +328,145 @@
 			"id": "instance:instance",
 			"currentPageId": "page:page",
 			"typeName": "instance"
+		},
+		{
+			"x": 450.73333116486884,
+			"y": 491.0278955781409,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:B2a5xU3thQYRo5p5LW73K",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 872.1458740234375,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "bulletList",
+							"content": [
+								{
+									"type": "listItem",
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Since we're creating this project using vite bundler, each"
+												}
+											]
+										},
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "environment variable should start with "
+												},
+												{
+													"type": "text",
+													"marks": [
+														{
+															"type": "bold"
+														},
+														{
+															"type": "code"
+														}
+													],
+													"text": "VITE_"
+												},
+												{
+													"type": "text",
+													"marks": [
+														{
+															"type": "code"
+														}
+													],
+													"text": " "
+												},
+												{
+													"type": "text",
+													"text": "and should"
+												}
+											]
+										},
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "be accessed as "
+												},
+												{
+													"type": "text",
+													"marks": [
+														{
+															"type": "bold"
+														},
+														{
+															"type": "code"
+														}
+													],
+													"text": "import.meta.env.VITE_VARIABLE_NAME."
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "So, its always important to read the docmentation of the bundler"
+												}
+											]
+										},
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "for setting up the environment variables."
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "a4CKv",
+			"typeName": "shape"
 		}
 	]
 }
