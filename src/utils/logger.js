@@ -7,7 +7,7 @@ log.setLevel("debug");
 export const createLogger = (namespace = "App") => {
   const colorMap = {
     debug: "color: green;",
-    info: "color: blue;",
+    info: "color: lightblue;",
     warn: "color: orange;",
     error: "color: red;",
   };
@@ -19,9 +19,9 @@ export const createLogger = (namespace = "App") => {
   };
 
   return {
-    debug: (...args) => log.debug(...format("debug", ...args)),
-    info: (...args) => log.info(...format("info", ...args)),
-    warn: (...args) => log.warn(...format("warn", ...args)),
-    error: (...args) => log.error(...format("error", ...args)),
+    debug: (...args) => log.debug(...format("🐛 debug", ...args)),
+    info: (...args) => log.info(...format("ℹ️ info", ...args)),
+    warn: (...args) => log.warn(...format("⚠️ warn", ...args)),
+    error: (...args) => log.error(...format("❌ error", ...args)),
   };
 };
