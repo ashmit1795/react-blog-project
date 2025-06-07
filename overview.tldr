@@ -36,9 +36,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 363.1974835270505,
-			"y": -140.13373520122107,
-			"lastActivityTimestamp": 1749291631186,
+			"x": 1353.252968356702,
+			"y": 1050.3049340030734,
+			"lastActivityTimestamp": 1749302374392,
 			"meta": {}
 		},
 		{
@@ -132,8 +132,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 239.82493862923909,
-			"y": 236.26774929310986,
+			"x": -187.15988202800963,
+			"y": -589.6107853991999,
 			"z": 0.533976827675149,
 			"meta": {},
 			"id": "camera:page:page",
@@ -191,17 +191,12 @@
 			"typeName": "shape"
 		},
 		{
-			"editingShapeId": null,
+			"editingShapeId": "shape:xMPas6EanLzMMWki74Gpm",
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:iubccKGfi84vOJlyhZEXn",
-				"shape:B2a5xU3thQYRo5p5LW73K",
-				"shape:URYm3YG2Mz1dVq-VL3U1E",
-				"shape:T_TDnm5Fag73Vn1YGeIDu",
-				"shape:0K5U0Cvv-jp4UJzKYr5OW",
-				"shape:AWJtjB6YcaWFA4J7_BbbK"
+				"shape:xMPas6EanLzMMWki74Gpm"
 			],
-			"hoveredShapeId": null,
+			"hoveredShapeId": "shape:xMPas6EanLzMMWki74Gpm",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -209,6 +204,55 @@
 			"id": "instance_page_state:page:page",
 			"pageId": "page:page",
 			"typeName": "instance_page_state"
+		},
+		{
+			"x": 390,
+			"y": 1040,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:xMPas6EanLzMMWki74Gpm",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 999.2083740234375,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "bulletList",
+							"content": [
+								{
+									"type": "listItem",
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "Set up similarly, according to authentication service by referring to the doc."
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "a82At",
+			"typeName": "shape"
 		},
 		{
 			"x": 625.0151336000126,
@@ -472,7 +516,7 @@
 			"isFocused": true,
 			"devicePixelRatio": 1.5,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": false,
+			"isHoveringCanvas": true,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
@@ -481,6 +525,57 @@
 			"id": "instance:instance",
 			"currentPageId": "page:page",
 			"typeName": "instance"
+		},
+		{
+			"x": 640,
+			"y": 960,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:6gjVPhMYRilwMOV5HSyzE",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "l",
+				"w": 1081.3646240234375,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Part 3: Build database and storage service with AppWrite"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": " "
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "a71U1",
+			"typeName": "shape"
 		},
 		{
 			"x": 758.1140715882939,
