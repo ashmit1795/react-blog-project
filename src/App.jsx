@@ -3,14 +3,14 @@ import './App.css';
 import { useDispatch } from 'react-redux';
 import authService from './appwrite/auth';
 import { login, logout } from './store/authSlice';
-import debug from 'debug';
 import { Header, Footer } from './components';
 import { Outlet } from 'react-router-dom';
+import { createLogger } from './utils/logger';
 
-
-const appDebug = debug("App")
 
 function App() {
+
+  const appDebug = createLogger("App");
 
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
@@ -19,12 +19,12 @@ function App() {
     authService.getCurrentUser()
     .then((userData) => {
       if(userData){
-        useDispatch(login({userData}));
+        dispatch(login({userData}));
       } else {
-        useDispatch(logout());
+        dispatch(logout());
       }
     }).catch((error) => {
-      appDebug("App :: error", error);
+      appDebug.error("App :: error", error);
     }).finally(() => {
       setLoading(false);
     })

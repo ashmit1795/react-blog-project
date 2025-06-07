@@ -1,8 +1,8 @@
 import config from "../config/config.js"
 import { Client, Account, ID } from "appwrite";
-import debug from "debug";
+import {createLogger} from "../utils/logger.js";
 
-const authDebug = debug("appwrite:auth");
+const authDebug = createLogger("appwrite:auth");
 
 export class AuthService {
     client = new Client();
@@ -25,9 +25,9 @@ export class AuthService {
             // call another method to directly login the user
             if(userAccount) return this.login({email, password});
             else return userAccount;
-            
+
         } catch (error) {
-            authDebug("createAccount :: error", error);
+            authDebug.error("createAccount :: error", error);
             throw error;
         }
     }
@@ -39,7 +39,7 @@ export class AuthService {
             if(result) return result;
             else return null;
         } catch (error) {
-            authDebug("login :: error", error);
+            authDebug.error("login :: error", error);
             throw error;
         }
     }
@@ -51,7 +51,7 @@ export class AuthService {
             if(result) return result;
             else return null;
         } catch (error) {
-            authDebug("getCurrentUser :: error", error);
+            authDebug.error("getCurrentUser :: error", error);
             throw error;
         }
     }
@@ -63,7 +63,7 @@ export class AuthService {
             if(result) return result;
             else return null;
         }catch(error){
-            authDebug("logout :: error", error);
+            authDebug.error("logout :: error", error);
             throw error;
         }
     }

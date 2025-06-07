@@ -1,8 +1,8 @@
 import { ID, Client, Storage } from "appwrite";
 import config from "../config/config";
-import debug from "debug";
+import {createLogger} from "../utils/logger.js";
 
-const storageDebug = debug("appwrite:storage");
+const storageDebug = createLogger("appwrite:storage");
 
 export class StorageService{
     client = new Client();
@@ -24,7 +24,7 @@ export class StorageService{
             if (result) return result;
             else return null;
         } catch (error) {
-            storageDebug("uploadFile :: error", error);
+            storageDebug.error("uploadFile :: error", error);
             throw error;
         }
     }
@@ -40,7 +40,7 @@ export class StorageService{
             else return null;
             
         } catch (error) {
-            storageDebug("deleteFile :: error", error);
+            storageDebug.error("deleteFile :: error", error);
             throw error;
         }
     }
@@ -56,7 +56,7 @@ export class StorageService{
             else return null;
             
         } catch (error) {
-            storageDebug("getFilePreview :: error", error);
+            storageDebug.error("getFilePreview :: error", error);
             throw error;
         }
     }

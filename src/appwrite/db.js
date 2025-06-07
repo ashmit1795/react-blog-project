@@ -1,8 +1,8 @@
 import { ID, Databases, Client, Query } from "appwrite";
 import config from "../config/config";
-import debug from "debug";
+import {createLogger} from "../utils/logger.js";
 
-const dbDebug = debug("appwrite:db");
+const dbDebug = createLogger("appwrite:db");
 
 export class DBService{
     client = new Client();
@@ -32,7 +32,7 @@ export class DBService{
             else return false;
 
         } catch (error) {
-            dbDebug("AppWrite Service :: createPost :: error", error);
+            dbDebug.error("AppWrite Service :: createPost :: error", error);
             throw error;
         }
     }
@@ -55,7 +55,7 @@ export class DBService{
             else return false;
 
         } catch (error) {
-            dbDebug("AppWrite Service :: updatePost :: error", error);
+            dbDebug.error("AppWrite Service :: updatePost :: error", error);
             throw error;
         }
     }
@@ -72,7 +72,7 @@ export class DBService{
             else return false; 
 
         } catch (error) {
-            dbDebug("AppWrite Service :: deletePost :: error", error);
+            dbDebug.error("AppWrite Service :: deletePost :: error", error);
             throw error;
         }
     }
@@ -89,7 +89,7 @@ export class DBService{
             else return false;
 
         } catch (error) {
-            dbDebug("AppWrite Service :: getPost :: error", error);
+            dbDebug.error("AppWrite Service :: getPost :: error", error);
             throw error;
         }
     }
@@ -110,7 +110,7 @@ export class DBService{
             else return false;
             
         } catch (error) {
-            dbDebug("AppWrite Service :: getPosts :: error", error);
+            dbDebug.error("AppWrite Service :: getPosts :: error", error);
             throw error;
         }
     }
