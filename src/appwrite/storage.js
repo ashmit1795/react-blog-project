@@ -9,7 +9,7 @@ export class StorageService{
     storage;
 
     constructor(){
-        this.client.setEndpoint(config.appwriteProjectId).setProject(config.appwriteProjectId);
+        this.client.setEndpoint(config.appwriteURL).setProject(config.appwriteProjectId);
         this.storage = new Storage(this.client);
     }
 
