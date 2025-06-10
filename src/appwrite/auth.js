@@ -44,9 +44,9 @@ export class AuthService {
         }
     }
 
-    async getCurrentUser(){
+    getCurrentUser(){
         try {
-            const result = await this.account.get();
+            const result = this.account.get();
 
             if(result) return result;
             else return null;
