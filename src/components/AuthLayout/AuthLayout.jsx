@@ -16,6 +16,7 @@ function Protected({children, authentication = true}) {
         if(authentication && !authStatus) navigate("/login");
         // Public route but logged in → redirect to home/dashboard
         else if(!authentication && authStatus) navigate("/");
+        setLoading(false);
 
     }, [navigate, authStatus, authentication])
 
