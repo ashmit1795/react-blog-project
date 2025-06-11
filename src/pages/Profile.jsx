@@ -13,9 +13,9 @@ function Profile() {
         dbService.getUserPosts(userId).then((posts) => {
             if(posts)  setPosts(posts.documents);
         }).finally(() => setLoading(false));
-    }, [loading, userData]);
+    }, [loading, userData]) ;
 
-    if (loading) {
+    if (loading || !userData) {
         return (
             <div className="w-full py-8 mt-4 text-center">
                 <Container>
