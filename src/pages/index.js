@@ -5,5 +5,6 @@ import Home from "./Home";
 import Login from "./Login";
 import Post from "./Post";
 import SignUp from "./SignUp";
+import Profile from "./Profile";
 
-export {AddPost, AllPosts, EditPost, Home, Login, Post, SignUp}
+export {AddPost, AllPosts, EditPost, Home, Login, Post, SignUp, Profile}

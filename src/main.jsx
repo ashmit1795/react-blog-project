@@ -5,7 +5,7 @@ import App from './App.jsx'
 import { Provider } from 'react-redux'
 import store from './store/store.js'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import {Home, SignUp, AddPost, AllPosts, Login, Post, EditPost } from "./pages/index.js";
+import {Home, SignUp, AddPost, AllPosts, Login, Post, EditPost, Profile } from "./pages/index.js";
 import { Protected } from './components/index.js'
 
 const router = createBrowserRouter([
@@ -22,6 +22,14 @@ const router = createBrowserRouter([
         element: (
           <Protected authentication={true}>
             <AllPosts />
+          </Protected>
+        )
+      },
+      {
+        path: "/my-profile",
+        element: (
+          <Protected authentication={true}>
+            <Profile />
           </Protected>
         )
       },
