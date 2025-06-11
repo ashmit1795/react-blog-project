@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import dbService from '../appwrite/db';
@@ -14,25 +14,27 @@ function Post() {
     let isAuthor;
     let isDraft;
 
-    async function fetchPost() {
-        if(slug){
-            const post = await dbService.getPost(slug);
-            if (post) setPost(post);
+    const fetchPost = useCallback(async () => {
+        if (slug) {
+            const fetchedPost = await dbService.getPost(slug);
+            if (fetchedPost) setPost(fetchedPost);
             else navigate("/");
-        }else{
+        } else {
             navigate("/");
         }
-    }
+    }, [slug, navigate]);
 
     if(post && userData){
         isAuthor = post.userId === userData.$id;
         isDraft = post.status === "draft";
     }
     const deletePost = async () => {
-        const deletedPost = await dbService.deletePost(post.$id);
-        if(deletedPost && deletedPost.featuredImage){ 
-            await storageService.deleteFile(deletedPost.featuredImage);
-            navigate("/");
+        if(window.confirm("Are you sure you want to delete this post?")){
+            const deletedFile = post ? await storageService.deleteFile(post.featuredImage) : undefined;
+            const deletedPost = post ? await dbService.deletePost(post.$id) : undefined;
+            if(deletedPost && deletedFile){ 
+                navigate("/my-profile");
+            }
         }
     }
 
@@ -47,7 +49,7 @@ function Post() {
 
     useEffect( () => {
         fetchPost();
-    }, [navigate, slug, publishPost]);
+    }, [fetchPost, publishPost, slug, navigate]);
     
     return post ? (
         <div className="py-10">
@@ -86,7 +88,7 @@ function Post() {
                         ) }
                     </div>
                     <div className="p-6">
-                        <h1 className="text-3xl font-bold mb-3">
+                        <h1 className="text-4xl font-extrabold mb-6 text-gray-800 leading-tight border-b pb-2">
                             {post.title}
                         </h1>
                         <div className="prose prose-lg max-w-none browser-css">

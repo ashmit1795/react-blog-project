@@ -12,7 +12,7 @@ function PostForm({post}){
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
     
-    const {register, handleSubmit, watch, setValue, getValues, control} = useForm({
+    const {register, handleSubmit, watch, setValue, getValues, control, formState: {errors}} = useForm({
         defaultValues:{
             title: post?.title || "",
             slug: post?.$id || "",
@@ -73,11 +73,16 @@ function PostForm({post}){
                 <Input 
                     label="Title: "
                     placeholder="Enter a title"
-                    className="mb-2"
-                    {...register("title", {
-                        required: true
-                    })}
+                    className={`mb-2 ${errors.title ? "border-red-500" : ""}`}
+                    {...register("title", { 
+                        required: "Title is required" 
+                        })
+                    }
                 />
+                {errors.title && (
+                    <p className="text-red-500 text-sm">{errors.title.message}</p>
+                )}
+
                 <Input 
                     label="Slug: "
                     placeholder="Slug will appear here"
@@ -98,18 +103,27 @@ function PostForm({post}){
                     control={control}
                     defaultValue={getValues("content")}
                 />
+                {errors.content && (
+                    <p className="text-red-500 text-sm mt-1">Content is required</p>
+                )}
             </div>
 
             <div className="w-full md:w-1/3 px-2 flex flex-col gap-4">
                 <Input 
                     label="Feature Image: "
                     type="file"
-                    className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+                    className={`file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 ${
+                        errors.image ? "border-red-500" : ""
+                    }`}
                     accept="image/png, image/jpg, image/jpeg"
                     {...register("image", {
-                        required: !post
-                    })}
+                        required: !post && "Feature Image is required",
+                        })
+                    }
                 />
+                {errors.image && (
+                    <p className="text-red-500 text-sm">{errors.image.message}</p>
+                )}
                 {post && (
                     <div className="mt-3 rounded-md border border-gray-300 p-1 bg-gray-50">
                         <img 
