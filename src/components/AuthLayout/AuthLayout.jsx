@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import SkeletonGrid from '../SkeletonGrid/SkeletonGrid';
 
 function Protected({children, authentication = true}) {
 
@@ -20,7 +21,7 @@ function Protected({children, authentication = true}) {
 
     }, [navigate, authStatus, authentication])
 
-    return loading ? <h1>Loading...</h1> : <>{children}</>
+    return loading ? <SkeletonGrid count={12}/> : <>{children}</>
 }
 
 export default Protected;

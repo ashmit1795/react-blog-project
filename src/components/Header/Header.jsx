@@ -27,11 +27,16 @@ function Header() {
     {
       name: "All Posts",
       endpoint: "/all-posts",
-      active: authStatus,
+      active: false,
     },
     {
       name: "Add Post",
       endpoint: "/add-post",
+      active: authStatus,
+    },
+    {
+      name: "My Profile",
+      endpoint: "/my-profile",
       active: authStatus,
     },
   ];

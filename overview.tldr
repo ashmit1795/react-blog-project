@@ -36,9 +36,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 1076.2168629669204,
-			"y": 1949.009217473671,
-			"lastActivityTimestamp": 1749383165246,
+			"x": 1810.7054750905777,
+			"y": 2109.7598351910983,
+			"lastActivityTimestamp": 1749549451435,
 			"meta": {}
 		},
 		{
@@ -76,6 +76,72 @@
 			},
 			"parentId": "page:page",
 			"index": "aD1ka",
+			"typeName": "shape"
+		},
+		{
+			"x": 430,
+			"y": 2120,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:rkaXe2_vq7GUdATFbFqhl",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 1519.90625,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "bulletList",
+							"content": [
+								{
+									"type": "listItem",
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "In react hook form, if we use a controller component to work with external or controlled components."
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "In our case, its the tinymce edtior, this controller component helpsto communicate with the parent and the children. "
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aGAkX",
 			"typeName": "shape"
 		},
 		{
@@ -313,9 +379,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -545.8942069237096,
-			"y": -1550.1042016688807,
-			"z": 0.5732359282331511,
+			"x": -692.4520490465281,
+			"y": -1996.6601297080108,
+			"z": 0.6277646762804081,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -423,12 +489,12 @@
 			"typeName": "shape"
 		},
 		{
-			"editingShapeId": null,
+			"editingShapeId": "shape:rkaXe2_vq7GUdATFbFqhl",
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:vUHcguiQTnwd2ireBmnOd"
+				"shape:rkaXe2_vq7GUdATFbFqhl"
 			],
-			"hoveredShapeId": "shape:vUHcguiQTnwd2ireBmnOd",
+			"hoveredShapeId": "shape:rkaXe2_vq7GUdATFbFqhl",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -503,6 +569,57 @@
 				"terminal": "start"
 			},
 			"typeName": "binding"
+		},
+		{
+			"x": 830,
+			"y": 2040,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:ieQzA_hdeHUVDhmUnt7iT",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "l",
+				"w": 458.0208435058594,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "Part 6: React Hook Form"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": " "
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "aFANX",
+			"typeName": "shape"
 		},
 		{
 			"x": 625.0151336000126,
@@ -815,17 +932,11 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {
-				"tldraw:geo": "rectangle",
-				"tldraw:horizontalAlign": "start",
-				"tldraw:verticalAlign": "start",
-				"tldraw:fill": "solid",
-				"tldraw:color": "blue"
-			},
+			"stylesForNextShape": {},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "ns-resize",
+				"type": "default",
 				"rotation": 0
 			},
 			"isFocusMode": false,

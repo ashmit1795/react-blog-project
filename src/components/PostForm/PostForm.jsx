@@ -8,11 +8,10 @@ import { useForm } from "react-hook-form";
 
 
 function PostForm({post}){
-
-    const {register, handleSubmit, watch, setValue, getValues} = useForm({
+    const {register, handleSubmit, watch, setValue, getValues, control} = useForm({
         defaultValues:{
             title: post?.title || "",
-            slug: post?.slug || "",
+            slug: post?.$id || "",
             content: post?.content || "",
             status: post?.status || "draft"
         }
@@ -39,7 +38,6 @@ function PostForm({post}){
             if(dbPost) navigate(`/post/${dbPost.$id}`);
         } else {
             const file = data.image[0] ? await storageService.uploadFile(data.image[0]) : null;
-            const userData = useSelector(state => state.auth.userData);
             const dbPost = await dbService.createPost({
                 ...data,
                 featuredImage: file?.$id,
@@ -70,11 +68,11 @@ function PostForm({post}){
 
     return (
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-            <div className="w-2/3 px-2">
+            <div className="w-full md:w-2/3 px-2">
                 <Input 
                     label="Title: "
                     placeholder="Enter a title"
-                    className="mb-4"
+                    className="mb-2"
                     {...register("title", {
                         required: true
                     })}
@@ -82,7 +80,8 @@ function PostForm({post}){
                 <Input 
                     label="Slug: "
                     placeholder="Slug will appear here"
-                    className="mb-4"
+                    disabled={true}
+                    className="mb-2 cursor-not-allowed"
                     {...register("slug", {
                         required: true
                     })}
@@ -100,41 +99,44 @@ function PostForm({post}){
                 />
             </div>
 
-            <div className="w-1/3 px-2">
+            <div className="w-full md:w-1/3 px-2 flex flex-col gap-4">
                 <Input 
-                    label="Feature Image"
+                    label="Feature Image: "
                     type="file"
-                    className="mb-4"
+                    className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
                     accept="image/png, image/jpg, image/jpeg"
                     {...register("image", {
                         required: !post
                     })}
                 />
+                {post && (
+                    <div className="mt-3 rounded-md border border-gray-300 p-1 bg-gray-50">
+                        <img 
+                            src={storageService.getFilePreview(post.featuredImage)} 
+                            alt={post.title} 
+                            className="h-32 w-full object-cover rounded-md"
+                        />
+                    </div>
+                )}
             </div>
-            {post && (
-                <div className="w-full mb-4">
-                    <img 
-                        src={storageService.getFilePreview(post.featuredImage)} 
-                        alt={post.title} 
-                        className="rounded-lg"
-                    />
-                </div>
-            )}
+            
             <SelectBtn 
                 options={["published", "draft"]}
                 label="Status: "
-                className="mb-4"
+                className="mb-2"
                 {...register("status", {
                     required:true
                 })}
             />
 
-            <Button 
-                text={ post ? "Update" : "Submit" }
-                type="submit"
-                bgColor={ post ? "bg-green-500" : undefined }
-                className="w-full"
-            />
+            <div className="w-full px-2">
+                <Button 
+                    text={ post ? "Update" : "Submit" }
+                    type="submit"
+                    bgColor={ post ? "bg-green-500 hover:bg-green-600" : "bg-indigo-500 hover:bg-indigo-600" }
+                    className="w-full text-lg py-3"
+                />
+            </div>
         </form>
     )
 

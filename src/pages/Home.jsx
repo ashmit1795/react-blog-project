@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import { Container, PostCard } from '../components'
+import { Container, PostCard, SkeletonGrid } from '../components'
 import dbService from '../appwrite/db';
-import { useSelector } from 'react-redux';
 
 
 function Home() {
     const [posts, setPosts] = useState([]);
-    console.log(useSelector((state) => state.auth.status))
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         dbService.getPosts().then((posts) => {
             if(posts)  setPosts(posts.documents);
-        });
-    }, []);
+        }).finally(() => setLoading(false));
+    }, [loading]);
+
+    if (loading) {
+        return (
+            <div className="w-full py-8 mt-4 text-center">
+                <Container>
+                    <SkeletonGrid count={8}/>
+                </Container>
+            </div>
+        )
+    }
 
     if(posts.length === 0){
         return (
@@ -20,7 +29,7 @@ function Home() {
                     <div className="flex flex-wrap">
                         <div className="p-2 w-full">
                             <h1 className="text-2xl font-bold hover:text-gray-500">
-                                Login to read posts
+                                No Posts uploaded yet.  
                             </h1>
                         </div>
                     </div>

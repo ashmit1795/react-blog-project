@@ -11,6 +11,7 @@ function Login() {
 
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const {register, handleSubmit} = useForm();
     const [error, setError] = useState("");
 
@@ -20,8 +21,10 @@ function Login() {
             const session = await authService.login(data);
             if(session){
                 const userData = await authService.getCurrentUser();
-                if(userData) useDispatch(authLogin(userData));
-                navigate("/");
+                if(userData){
+                    dispatch(authLogin(userData));
+                    navigate("/");
+                }
             }
         } catch (error) {
             setError(error.message);
@@ -70,6 +73,7 @@ function Login() {
                             })}
                         />
                         <Button 
+                            type="submit"
                             text="Sign In"
                             className="w-full"
                         />

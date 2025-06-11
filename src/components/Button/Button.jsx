@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 function Button(
     {
@@ -8,13 +8,14 @@ function Button(
         textColor="text-white",
         className="",
         ...props
-    }
+    },
+    ref
 ) {
   return (
-    <button type={type} className={`px-4 py-2 rounded-lg ${bgColor} ${textColor} ${className}`} {...props}>
+    <button ref={ref} type={type} className={`px-4 py-2 rounded-lg ${bgColor} ${textColor} ${className}`} {...props}>
         {text}
     </button>
   )
 }
 
-export default Button
+export default forwardRef(Button);
