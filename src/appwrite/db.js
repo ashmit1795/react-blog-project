@@ -115,6 +115,26 @@ export class DBService{
         }
     }
 
+    async getUserPosts(userId){
+        try {
+            const queries = [
+                Query.equal("userId", userId)
+            ]
+
+            const result = await this.databases.listDocuments(
+                config.appwriteDatabaseId,
+                config.appwriteCollectionId,
+                queries
+            );
+    
+            if(result) return result;
+            else return false;
+            
+        } catch (error) {
+            dbDebug.error("AppWrite Service :: getUserPosts :: error", error)
+        }
+    }
+
 }
 
 const dbService = new DBService();

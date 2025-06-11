@@ -47,11 +47,10 @@ export class StorageService{
 
     getFilePreview(fileId){
         try {
-            const result = this.storage.getFilePreview(
+            const result = this.storage.getFileView(
                 config.appwriteBucketId,
                 fileId
-            )
-            
+            );
             if (result) return result;
             else return null;
             
