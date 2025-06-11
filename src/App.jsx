@@ -3,7 +3,7 @@ import './App.css';
 import { useDispatch } from 'react-redux';
 import authService from './appwrite/auth';
 import { login, logout } from './store/authSlice';
-import { Header, Footer } from './components';
+import { Header, Footer, SkeletonGrid, Container } from './components';
 import { Outlet } from 'react-router-dom';
 import { createLogger } from './utils/logger';
 
@@ -31,7 +31,11 @@ function App() {
   }, []);
 
   if(loading){
-    return <div className="loading">Loading...</div>
+    return (
+      <Container>
+        <SkeletonGrid count={12} />
+      </Container>
+    )
   }
   return (
     <div className="min-h-screen flex flex-wrap justify-center content-between bg-gray-400">
