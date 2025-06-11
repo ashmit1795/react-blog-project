@@ -11,7 +11,7 @@ function SignUp() {
     const navigate = useNavigate();
     const [error, setError] = useState("");
     const dispatch = useDispatch();
-    const {register, handleSubmit} = useForm();
+    const {register, handleSubmit, formState: { errors }} = useForm();
 
     const create = async (data) => {
         setError("");
@@ -51,36 +51,38 @@ function SignUp() {
                             label="Name: "
                             placeholder="Enter your full name"
                             {...register("name", {
-                                required: true,
+                                required: "Name is required",
                             })}
                         />
+                        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
 
                         <Input 
                             label="Email: "
                             type="email"
                             placeholder="Enter your email"
                             {...register("email", {
-                                required: true,
-                                validate: {
-                                    matchPattern: (value) => 
-                                        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Enter a valid email address",
+                                required: "Email is required",
+                                pattern: {
+                                    value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+                                    message: "Enter a valid email address"
                                 }
                             })}
                         />
+                        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
 
                         <Input
                             label="Password: "
                             type="password"
                             placeholder="Enter a password"
                             {...register("password", {
-                                required: true,
-                                validate:{
-                                    matchPattern: (value) => 
-                                        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(value) || "Password must be at least 8 characters, include 1 uppercase, 1 lowercase, 1 number, and may contain special characters."
+                                required: "Password is required",
+                                pattern: {
+                                    value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+                                    message: "Password must be at least 8 characters, include 1 uppercase, 1 lowercase, and 1 number"
                                 }
                             })}
-
                         />
+                        {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
 
                         <Button
                             text="Create Account"
