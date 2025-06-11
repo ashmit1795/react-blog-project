@@ -12,7 +12,7 @@ function Login() {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const {register, handleSubmit} = useForm();
+    const {register, handleSubmit, formState: {errors}} = useForm();
     const [error, setError] = useState("");
 
     const login = async (data) => {
@@ -57,21 +57,21 @@ function Login() {
                             type="email"
                             placeholder="Enter your email"
                             {...register("email", {
-                                required: true,
-                                validate: {
-                                    matchPattern: (value) => 
-                                        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Enter a valid email address",
-                                }
+                                required: "Email is required",
                             })}
                         />
+                        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+                        
                         <Input 
                             label="Password: "
                             type="password"
                             placeholder="Enter your password"
                             {...register("password", {
-                                required: true
+                                required: "Password is required",
                             })}
                         />
+                        {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
+
                         <Button 
                             type="submit"
                             text="Sign In"
