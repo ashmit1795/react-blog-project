@@ -6,6 +6,7 @@ import { login, logout } from './store/authSlice';
 import { Header, Footer, SkeletonGrid, Container } from './components';
 import { Outlet } from 'react-router-dom';
 import { createLogger } from './utils/logger';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
   }
   return (
     <div className="min-h-screen flex flex-wrap justify-center content-between bg-gray-400">
+      <SpeedInsights />
       <div className="w-full block">
         <Header />
         <main>
