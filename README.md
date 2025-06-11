@@ -90,7 +90,7 @@ I will now dive deeper into **creating industry-standard MERN stack projects** f
 
 ## 🙌 Acknowledgements
 
-- Thanks to [**Hitesh Choudhary**](https://www.youtube.com/c/HiteshChoudharydotcom) for the amazing **Chai aur React** series. It provided immense clarity and motivation to build this project from scratch.
+- Thanks to [**Hitesh Choudhary**](https://www.youtube.com/@chaiaurcode) for the amazing **Chai aur React** series. It provided immense clarity and motivation to build this project from scratch.
 
 ---
 
