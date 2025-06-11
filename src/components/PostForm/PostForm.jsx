@@ -8,17 +8,18 @@ import { useForm } from "react-hook-form";
 
 
 function PostForm({post}){
+
+    const navigate = useNavigate();
+    const userData = useSelector((state) => state.auth.userData);
+    
     const {register, handleSubmit, watch, setValue, getValues, control} = useForm({
         defaultValues:{
             title: post?.title || "",
             slug: post?.$id || "",
-            content: post?.content || "",
+            content: post?.content || `- By ${userData.name} `,
             status: post?.status || "draft"
         }
     });
-
-    const navigate = useNavigate();
-    const userData = useSelector((state) => state.auth.userData);
 
     const submit = async (data) => {
         if(post){
