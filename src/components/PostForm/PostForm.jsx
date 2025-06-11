@@ -16,7 +16,7 @@ function PostForm({post}){
         defaultValues:{
             title: post?.title || "",
             slug: post?.$id || "",
-            content: post?.content || `- By ${userData.name} `,
+            content: post?.content || `- By ${userData?.name} `,
             status: post?.status || "draft"
         }
     });

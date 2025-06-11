@@ -7,13 +7,13 @@ function Profile() {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const userData = useSelector((state) => state.auth.userData);
-    const userId = userData.$id;
+    const userId = userData?.$id;
 
     useEffect(() => {
         dbService.getUserPosts(userId).then((posts) => {
             if(posts)  setPosts(posts.documents);
         }).finally(() => setLoading(false));
-    }, [loading])
+    }, [loading, userData]);
 
     if (loading) {
         return (
